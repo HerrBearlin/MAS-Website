@@ -1,0 +1,57 @@
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <h2> Organisation Details</h2>
+    <form class = "form">
+        <label for="orgName"> Organisation Name: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="orgName" id="orgName" disabled>
+        <span id="errorOrgName" class="errors-text"></span>
+
+        <label for="leagueName"> League: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="leagueName" id="leagueName" disabled>
+        <span id="errorLeagueName" class="errors-text"></span>
+
+        <label for="budget"> Budget[Euro]: <span class= "symbol-required"> *</span></label>
+        <input type="number" id="budget" name="budget" min="10000" step="5000" disabled/>
+        <span id="errorBudget" class="errors-text"></span>
+
+        
+        <div class= "form-buttons">
+            <p id="errorsSummary"class="errors-text" ></p>
+            <a href="/organisations" class="form-button-cancel">Cancel</a>
+        </div>
+
+    </form>
+    <h2> Contract Details</h2>
+    <table class="table-list">
+        <thead>
+            <tr>
+                <th> PlayerId </th>
+                <th> OrganisationId</th>
+                <th> DateFrom </th>
+                <th> DateTo </th>
+                
+            </tr>
+        </thead>
+        <tbody class="table-list">
+            <tr>
+                <td> 111</td>
+                <td> 001</td>
+                <td> 2022-11-27 </td>
+                <td> 2023-11-27 </td>
+                
+            </tr>
+
+            <tr>
+                <td> 112</td>
+                <td> 002</td>
+                <td> 2022-10-01 </td>
+                <td> 2024-02-02</td>
+        
+            </tr>
+
+        </tbody>
+    </table>
+</main>
+
+
+<%- include('../../fragment/footer.ejs')%>

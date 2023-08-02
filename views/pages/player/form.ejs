@@ -1,0 +1,178 @@
+
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <script type="application/javascript" src="/js/validationPlayerForm.js" ></script>
+    <h2> <%= pageTitle %></h2>
+    <form class = "form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();"  >
+
+        <input type="hidden" name="pId" value="<%= player.pId%>">
+
+        <label for="fName"> <%= __('player.fields.fName') %> <span class= "symbol-required"> *</span></label>
+        <input
+               type="text" name="fName" id="fName" placeholder= "<%= __('placeholder.2_60char')%>"
+               class="<%= validationErrors.find(e => e.path.includes('fName')) ? 'error-input' : '' %>"
+               value="<%= player.fName%>"
+                <%= (formMode == 'showDetails') ? 'disabled' : ''%> required >
+        <span id="errorFirstName" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('fName'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('fName')).message) %>
+            <% } %>
+
+
+        </span>
+
+        <label for="lName"> <%= __('player.fields.lName') %> <span class= "symbol-required"> *</span></label>
+        <input type="text" name="lName" id="lName"  placeholder= "<%= __('placeholder.2_60char')%>"
+               class="<%= validationErrors.find(e => e.path.includes('lName')) ? 'error-input' : '' %>"
+               value="<%= player.lName%>"
+               <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorLastName" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('lName'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('lName')).message) %>
+            <% } %>
+        </span>
+
+        <label for="nName"> <%= __('player.fields.nName') %><span class= "symbol-required"> *</span></label>
+        <input type="text" name="nName" id="nName"placeholder= "<%= __('placeholder.2_60char')%>"
+               class="<%= validationErrors.find(e => e.path.includes('nName')) ? 'error-input' : '' %>"
+               value="<%= player.nName%>"
+        <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorNickName" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('nName'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('nName')).message) %>
+            <% } %>
+
+        </span>
+
+        <label for="dateOfBirth"> <%= __('player.fields.dateOfBirth') %> <span class= "symbol-required"> *</span> </label>
+        <input type="date" name="dateOfBirth" id="dateOfBirth" min="1945-10-01" placeholder= "<%= __('placeholder.date')%>"
+               class="<%= validationErrors.find(e => e.path.includes('dateOfBirth')) ? 'error-input' : '' %>"
+               value="<%= fmt.formatDate(player.dateOfBirth)%>"
+        <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorDateOfBirth" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('dateOfBirth'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('dateOfBirth')).message) %>
+            <% } %>
+        </span>
+
+        <label for="isCaptain"> <%= __('player.fields.isCaptain') %> <span class= "symbol-required"> *</span> </label>
+        <select name="isCaptain" id="isCaptain" placeholder= "<%= __('placeholder.yesNo')%>"
+                class="<%= validationErrors.find(e => e.path.includes('isCaptain')) ? 'error-input' : '' %>"
+                value="<%= player.isCaptain%>"
+                <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+                <option value=""> <%= __('selectForm.optionIsCaptain')%></option>
+                <% if(player.isCaptain) { %>
+                    <option value=1 <%= (player.isCaptain.toString() === "1") ? 'selected' : '' %>> <%= __('selectForm.optionYes')%> </option>
+                    <option value=0  <%= (player.isCaptain.toString() === "0") ? 'selected' : '' %>> <%= __('selectForm.optionNo')%> </option>
+                <% } else { %>
+                    <option value=1 <%= (player.isCaptain === 1) ? 'selected' : '' %>> <%= __('selectForm.optionYes')%> </option>
+                    <option value=0  <%= (player.isCaptain === 0) ? 'selected' : '' %>> <%= __('selectForm.optionNo')%> </option>
+                <% } %>
+        </select>
+
+        <span id="errorIsCaptain" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('isCaptain'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('isCaptain')).message) %>
+            <% } %>
+        </span>
+
+        <label for="pPlayed"> <%= __('player.fields.pPlayed') %> </label>
+        <select name="pPlayed" id="pPlayed" placeholder= "<%= __('placeholder.pPlayed')%>"
+                class="<%= validationErrors.find(e => e.path.includes('pPlayed')) ? 'error-input' : '' %>"
+                value="<%= player.pPlayed%>"
+                <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+            <option value=""> <%= __('selectForm.optionPositionPlayed')%></option>
+            <option value="Top" <%= (player.pPlayed === "Top") ? 'selected' : '' %>> <%= __('selectForm.optionTop')%> </option>
+            <option value="Jungle" <%= (player.pPlayed === "Jungle") ? 'selected' : '' %> > <%= __('selectForm.optionJungle')%> </option>
+            <option value="Mid" <%= (player.pPlayed === "Mid") ? 'selected' : '' %> > <%= __('selectForm.optionMid')%> </option>
+            <option value="Bot" <%= (player.pPlayed === "Bot") ? 'selected' : '' %> > <%= __('selectForm.optionBot')%> </option>
+            <option value="Support" <%= (player.pPlayed === "Support") ? 'selected' : '' %> > <%= __('selectForm.optionSupport')%> </option>
+        </select>
+        <span id="errorPositionPlayed" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('pPlayed'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('pPlayed')).message) %>
+            <% } %>
+        </span>
+
+        <label for="phNumber"> <%= __('player.fields.phNumber') %> <span class= "symbol-required"> *</span></label>
+        <input type="text" name="phNumber" id="phNumber" placeholder= "<%= __('placeholder.phNumber')%>"
+               class="<%= validationErrors.find(e => e.path.includes('phNumber')) ? 'error-input' : '' %>"
+               value="<%= player.phNumber%>"
+        <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorPhoneNumber" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('phNumber'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('phNumber')).message) %>
+            <% } %>
+        </span>
+
+        <label for="password"> <%= __('player.fields.password') %> <span class= "symbol-required"> *</span></label>
+        <input type="text" name="password" id="password"  placeholder= "<%= __('placeholder.2_60char')%>"
+               class="<%= validationErrors.find(e => e.path.includes('password')) ? 'error-input' : '' %>"
+               value="<%= player.password%>"
+                <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorPassword" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('password'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('password')).message) %>
+            <% } %>
+        </span>
+
+        <% if (formMode == 'showDetails') { %>
+        <div class="form-buttons">
+            <a href="/players/edit/<%= player.pId %>" class="list-actions-button-edit"> <%= __('player.form.details.btnLabel') %> </a>
+        </div>
+        <% } %>
+
+
+        <div class= "form-buttons">
+            <p id="errorsSummary"class="errors-text" ></p>
+            <div style="display: none ">
+                <span id="errorSummary"><%= __('validationMessage.errorSummary')%></span>
+            </div>
+            <% if (formMode != 'showDetails') { %>
+            <input class="form-button-submit" type="submit" value="<%=btnLabel%>"/>
+            <a class="form-button-cancel" href="/players"><%= __('form.actions.cancel') %> </a>
+            <% } else {%>
+                <a class="form-button-cancel" href="/players"><%= __('form.actions.return') %></a>
+            <% } %>
+        </div>
+
+        <div style="display: none">
+            <span id="errorMessage-required"><%= __('validationMessage.fieldRequired') %></span>
+        </div>
+
+    </form>
+
+    <% if (formMode == 'showDetails' || formMode == 'edit') {%>
+    <% if(player.contracts) { %>
+    <h2>
+        <%= __('player.form.details.tableTitle') %>
+    </h2>
+    <table class="table-list">
+        <thead>
+        <tr>
+            <th> <%= __('player.form.details.tableHd1') %></th>
+            <th> <%= __('player.form.details.tableHd2') %> </th>
+            <th> <%= __('player.form.details.tableHd3') %></th>
+            <th> <%= __('player.form.details.tableHd4') %></th>
+            <th> <%= __('player.form.details.tableHd5') %> </th>
+            </th>
+        </tr>
+        </thead>
+        <tbody>
+            <% for (let p of player.contracts) { %>
+                <tr>
+                    <td><a href="/contracts/details/<%= p.organisation.orgId%>"> <%= p.organisation.orgName %></a> </td>
+                    <td><%= p.dateFrom.toISOString().split('T')[0]%></td>
+                    <td><%= p.dateTo.toISOString().split('T')[0]%></td>
+                    <td><%= p.organisation.leagueName%></td>
+                    <td><%= p.salary%></td>
+                </tr>
+            <% } %>
+
+        </tbody>
+        </table>
+        <% } %>
+    <% } %>
+
+</main>
+<%- include('../../fragment/footer.ejs')%>

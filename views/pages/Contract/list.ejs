@@ -1,0 +1,47 @@
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <h2> <%= __('contract.list.pageTitle') %></h2>
+    <table class="table-list">
+        <thead>
+            <tr>
+                <th> <%= __('contract.fields.conId') %></th>
+                <th> <%= __('contract.fields.pId') %>  </th>
+                <th> <%= __('contract.fields.orgId') %></th>
+                <th> <%= __('list.actions.title') %> </th>
+            </tr>
+        </thead>
+        <tbody class="table-list">
+        <% for (let c of contracts) {%>
+            <tr>
+                <td> <%= c.conId%> </td>
+                <td> <%= c.player.fName %>  </td>
+                <td> <%= c.organisation.orgName%> </td>
+
+                <td>
+                    <% if(loggedUser) {%>
+                    <ul class="list-actions">
+                        <li>
+                            <a href="/contracts/details/<%=c.conId%>" class = "list-actions-button-details"><%= __('list.actions.details') %></a>
+                        </li>
+                        <li>
+                            <a href="/contracts/edit/<%=c.conId%>" class = "list-actions-button-edit"><%= __('list.actions.edit') %></a>
+                        </li>
+                        <li>
+                            <a href="/contracts/delete/<%=c.conId%>" class = "list-actions-button-delete"><%= __('list.actions.delete') %></a>
+                        </li>
+                    </ul>
+                    <% } else { %>
+                        <%= __('validationMessage.noActions')%>
+                    <% }%>
+                </td>
+
+            </tr>
+        <% }%>
+        </tbody>
+    </table>
+    <% if(loggedUser) {%>
+    <p><a href="/contracts/add" class="button-add"> <%= __('contract.list.addNew') %></a></p>
+    <% }%>
+</main>
+
+<%- include('../../fragment/footer.ejs')%>

@@ -1,0 +1,46 @@
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <h2> <%= __('player.list.pageTitle') %></h2>
+    <table class="table-list">
+        <thead>
+            <tr>
+                <th><%= __('player.fields.fName') %></th>
+                <th><%= __('player.fields.lName') %></th>
+                <th><%= __('player.fields.nName') %></th>
+                <th><%= __('player.fields.phNumber') %></th>
+                <th><%= __('list.actions.title') %></th>
+            </tr>
+        </thead>
+        <tbody class="table-list">
+        <% for (let player of players) { %>
+            <tr>
+                <td> <%= player.fName %> </td>
+                <td> <%= player.lName %></td>
+                <td> <%= player.nName %> </td>
+                <td> <%= player.phNumber %></td>
+                <td>
+                    <% if(loggedUser) {%>
+                    <ul class="list-actions" >
+                        <li>
+                            <a href="/players/details/<%=player.pId%>" class = "list-actions-button-details"><%= __('list.actions.details') %></a>
+                        </li>
+                        <li>
+                            <a href="/players/edit/<%=player.pId%>" class = "list-actions-button-edit"><%= __('list.actions.edit') %></a>
+                        </li>
+                        <li>
+                            <a href="/players/delete/<%=player.pId%>" class = "list-actions-button-delete"><%= __('list.actions.delete') %></a>
+                        </li>
+                    </ul>
+                    <% } else { %>
+                        <%= __('validationMessage.noActions')%>
+                    <% }%>
+                </td>
+            </tr>
+        <% }%>
+        </tbody>
+    </table>
+    <% if(loggedUser) {%>
+    <p><a href="/players/add" class="button-add"> <%= __('player.list.addNew') %></a></p>
+    <% }%>
+</main>
+<%- include('../../fragment/footer.ejs')%>

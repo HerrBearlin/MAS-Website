@@ -1,0 +1,41 @@
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <h2> Edit Contract</h2>
+    <form class = "form">
+        <label for="playerId"> Player: <span class= "symbol-required"> *</span></label>
+        <select name="playerId" id="playerId" >
+            <option value=""> What is the player?</option>
+            <option value="111" selected> Olga Bayushi </option>
+            <option value="112" > Denis Topman </option>
+        </select>
+        <span id="errorPlayerId" class="errors-text"></span>
+
+        <label for="orgId"> Organisation: <span class= "symbol-required"> *</span></label>
+        <select name="orgId" id="orgId" >
+            <option value=""> What is the org?</option>
+            <option value="001" selected> Thief </option>
+            <option value="002" > Leave 2 Esports </option>
+        </select>
+        <span id="errorOrgId" class="errors-text"></span>
+
+        <label for="dateFrom"> Date From: <span class= "symbol-required"> *</span></label>
+        <input type="date" name="dateFrom" id="dateFrom" min="1945-10-01" value="2022-11-27" required>
+        <span id="errorDateFrom" class="errors-text"></span>
+
+        <label for="dateTo"> Date To: <span class= "symbol-required"> *</span></label>
+        <input type="date" name="dateTo" id="dateTo" min="1945-10-01" value="2023-11-27" required>
+        <span id="errorDateTo" class="errors-text"></span>
+
+        <label for="salary"> Salary[Euro]: <span class= "symbol-required"> *</span></label>
+        <input type="number" id="salary" name="salary" min="10000" step="5000" value="50000" required/>
+        <span id="errorSalary" class="errors-text"></span>
+
+        <div class= "form-buttons">
+            <p id="errorsSummary"class="errors-text" > </p>
+            <input type="submit" value="Add"  class="form-button-submit" />
+            <a href="\pages\Contract\list.html" class="form-button-cancel">Cancel</a>
+        </div>
+
+    </form>
+</main>
+<%- include('../../fragment/footer.ejs')%>

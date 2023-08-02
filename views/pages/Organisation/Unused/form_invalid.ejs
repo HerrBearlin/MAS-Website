@@ -1,0 +1,25 @@
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <h2> Add New Organisation</h2>
+    <form class = "form">
+        <label for="orgName"> Organisation Name: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="orgName" id="orgName" class = "error-input"  required>
+        <span id="errorOrgName"  class="errors-text">FieldRequired </span>
+
+        <label for="leagueName"> League: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="leagueName" id="leagueName"class = "error-input"  required>
+        <span id="errorLeagueName" class="errors-text">FieldRequired</span>
+
+        <label for="budget"> Budget [Euro]: <span class= "symbol-required"> *</span></label>
+        <input type="number" id="budget" name="budget" min="10000" step="5000" class = "error-input" required/>
+        <span id="errorBudget" class="errors-text">FieldRequired</span>
+
+        <div class= "form-buttons"> 
+            <p id="errorsSummary"class="errors-text" > Errors in fields.</p>
+            <input type="submit" value="Add"  class="form-button-submit" />
+            <a href="/organisations" class="form-button-cancel">Cancel</a>
+        </div>
+
+    </form>
+</main>
+<%- include('../../fragment/footer.ejs')%>

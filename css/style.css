@@ -1,0 +1,447 @@
+html{
+    background-color: rgba(19, 1, 1, 0.577);
+    font-family:'Courier New', Courier, monospace;
+}
+
+
+header,
+main,
+footer{
+    background-color: rgb(230, 213, 184);
+    
+}
+
+header,
+main,
+footer,
+nav{
+    margin: 1.5rem
+}
+
+header,
+footer{
+    background-color: rgb(27, 26, 23);
+    color: rgb(230, 213, 184);
+    padding: 1rem;
+}
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    height: 100px;
+    background-blend-mode:luminosity;
+}
+
+/*navigation bar*/
+nav{
+    background-color: rgb(228, 88, 38);
+}
+
+/*adjusting the list*/
+nav ul {
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+    list-style-type: none;
+}
+
+/*display for links*/
+nav ul li a{
+    display: inline-block;
+    color: black;
+    padding: 1rem 1rem;
+    text-decoration: none;
+}
+
+/*when you hover over a menu item*/
+nav ul li a:hover {
+    background-color: rgba(181, 59, 15, 0.29);
+    color: rgba(239, 135, 97, 0.975);
+}
+
+/* Marking the menu item that is currently selected*/
+
+nav ul li a.active{
+    background-color:rgb(181, 59, 15);
+    color:rgba(239, 135, 97, 0.975);
+}
+
+.table-list{
+    border-collapse: collapse;
+    color: #000000;
+    width: 100%
+}
+
+/*Table and cell borders:*/
+.table-list
+.table-list th,
+.table-list td{
+    border: 1px solid #00060a;
+}
+
+
+.table-list th,
+.table-list td{
+    padding: 0.5rem;
+}
+
+
+/*Determine the background color of the header and alternate lines: */
+.table-list th,
+.table-list tbody tr:nth-child(even){
+    background-color:rgb(228, 88, 38);
+}
+
+/*Assign the list-actions class to the unordered list (ul) in the last column of the table.
+
+Adjust the list to display its items as horizontal buttons:
+Arrange list items horizontally: */
+
+.list-actions {
+    margin: 0;
+    text-align: center;
+    list-style-type: none;
+    padding: 0;
+}
+
+/*Arrange list items horizontally:*/
+.list-actions li {
+    display: inline-block;
+}
+
+
+/*Add appropriate classes to the individual links (a) in the list elements (ul) with class list-actions:
+list-actions-button-details to Details link
+list-actions-button-edit to Edit link
+list-actions-button-delete to Delete link
+We define properties common to the buttons: */
+
+.list-actions-button-details,
+.list-actions-button-edit,
+.list-actions-button-delete{
+    display: inline-block;
+    width: 75px;
+    padding: 0.25rem 0.5rem;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+
+    margin-right: 1rem;
+}
+
+
+
+.list-actions-button-details{
+    background-color: #2980b9;
+}
+.list-actions-button-details:hover{
+    background-color: #3498db;
+}
+
+.list-actions-button-edit{
+    background-color: #f39c12;
+}
+.list-actions-button-edit{
+    background-color: #f1c40f;
+}
+
+.list-actions-button-delete{
+    background-color: #ea1c0e;
+}
+.list-actions-button-delete:hover{
+    background-color: #a31106;
+}
+
+/*Add the button-add class to the link (a) used to add a new record (at the bottom of the page).
+
+Add the button-add class to the common definition for buttons:*/
+.form-buttons{
+    margin-top: 2rem;
+    grid-column: 1/span 2;
+}
+
+.list-actions-button-details,
+.list-actions-button-edit,
+.list-actions-button-delete,
+.button-add,
+.form-button-submit,
+.form-button-cancel{
+
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/*Add a specific declaration for the button:*/
+
+.button-add,
+.form-button-submit,
+.form-button-cancel{
+    padding: 0.5rem 1rem;
+}
+
+.button-add,
+.form-button-submit
+{
+    background-color: #27ae60;
+}
+
+.button-add:hover,
+.form-button-submit{
+    background-color: #27ae60;
+}
+.form-button-submit,
+.form-button-cancel{
+    width: 100%;
+}
+
+.form-button-cancel{
+   box-sizing: border-box;
+   display: block;
+   background-color: #a31106;
+}
+.form-button-submit{
+    margin-bottom: 0.5rem;
+
+ }
+
+/*Standardize the appearance of form elements: */
+button, 
+input, 
+select, 
+textarea { 
+    font-family: inherit; 
+    font-size: 100%; 
+    box-sizing: border-box; 
+    padding: 0; margin: 0; 
+    overflow: auto; 
+} 
+
+textarea{
+    overflow: auto;
+}
+
+
+/*Add a form class to the form (form).
+
+Define form properties:
+add a grid type layout with three columns
+*/
+
+.form{  
+   
+    margin-left: 2rem;
+    display: grid;
+    grid-template-columns: 150px 300px 1fr;
+    gap: 1rem;
+}
+
+
+/*define properties common to form fields*/
+
+.form select,
+.form input[type="text"],
+.form input[type="number"],
+.form input[type="date"],
+.form input[type="email"] {
+    border: 1px solid black;
+    color: black;
+    border-radius: 5px;
+    padding: 0.05rem;
+    width: 100%;
+    background-color: transparent;
+}
+
+/*define lables*/
+.form label{
+    display: block;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/*Define a class that will be responsible for properly formatting misfilled form fields: */
+
+.form input.error-input,
+.form select.error-input{
+    border: 1.5px solid #e74c3c;
+}
+
+.dropdown
+{
+    opacity: 0.0;
+}
+.errors-text{
+    display: block;
+    font-size: 0.85em;
+    line-height: 2.25rem;
+    margin-top: 0.5em;
+    color: #e74c3c;
+}
+
+
+.errors-text,
+.symbol-required{
+    color: #c0392b;
+}
+/*Zdefiniowanie nagłówka drugiego poziomu (h2) dla sekcji zawartości (main): */
+main h2{
+    border-bottom: 1px solid #7f8c8d;
+    margin-bottom: 2rem;
+}
+
+
+/*move the content away from the border*/
+main{
+    padding: 1.5rem;
+}
+
+footer{
+    text-align: center;
+}
+
+login{
+
+}
+
+
+/*  We will define the appropriate views for the resolution respectively:
+
+less than 720 pixels (tablets)
+less than 400 pixels (smarthphones) */
+@media all and (max-width: 720px){
+
+    header{
+        flex-direction: column;
+    }
+    header h1{
+        text-align: center;
+    }
+    header img {
+        align-self: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+
+    }
+
+    nav ul li{
+        /*each item occupies 50% of the width*/
+        flex-basis: 50%;
+        text-align: center;
+    }
+    /*display of list links to occupty all available space*/
+    nav ul li a{
+        display: block;
+    }
+
+    .form{
+        grid-template-columns: 1fr ;
+        row-gap: unset;
+        margin-left: unset;
+    }
+
+    .form-buttons{
+        grid-column: 1/1;
+    }
+    .form select, 
+    .form input[type="text"],
+    .form input[type="number"],
+    .form input[type="date"],
+    .form input[type="email"] {
+       margin-bottom: 1rem;
+    }
+
+    .table-list th,
+    .table-list tbody td:nth-child(3){
+        display: none;
+    }
+
+
+    
+    
+}
+
+@media all and (max-width: 400px){
+
+    body,
+    nav,
+    nav ul,
+    header,
+    main,
+    footer {
+        margin: 0;
+    }
+    nav ul li{
+        flex-basis: 100%;
+    }
+
+    .form{
+        grid-template-columns: 0.5fr ;
+        row-gap: unset;
+        margin-left: unset;
+    }
+
+    .form-buttons{
+        grid-column: 1/1;
+    }
+
+    .form select, 
+    .form input[type="text"],
+    .form input[type="number"],
+    .form input[type="date"],
+    .form input[type="email"] {
+       margin-bottom: 1rem;
+    }
+
+    .table-list{
+        border-collapse: collapse;
+        color: #000000;
+        width: 100%
+    }
+    
+    /*Table and cell borders:*/
+    .table-list
+    .table-list th,
+    .table-list td{
+        border: 1px solid #00060a;
+    }
+    
+    
+    .table-list th,
+    .table-list td{
+        padding: 0.5rem;
+    }
+    
+    
+    /*Determine the background color of the header and alternate lines: */
+    .table-list th,
+    .table-list tbody tr:nth-child(3){
+        display: none;
+    }
+
+    .list-actions li {
+        float: left;
+        clear: left;
+    }
+}
+
+
+body{
+
+    min-width: 150px;
+}
+

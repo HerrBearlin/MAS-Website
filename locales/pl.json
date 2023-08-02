@@ -1,0 +1,234 @@
+{
+	"main-page": {
+		"title": "Strona główna"
+	},
+	"login": {
+		"loginTitle": "Zaloguj",
+		"password": "Hasło",
+		"submit": {
+			"value": "Zaloguj"
+		},
+		"phNumber": "Numer Telefonu",
+		"loggedIn": "Zalogowany jako ",
+		"logout": "Wyloguj"
+	},
+	"nav": {
+		"main-page": "Strona główna",
+		"players": "Gracze",
+		"organisations": "Organizacje",
+		"contracts": "Kontrakty"
+	},
+	"list": {
+		"actions": {
+			"title": "Akcje",
+			"details": "Szczegóły",
+			"edit": "Edytuj",
+			"delete": "Usuń"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Powrót",
+			"edit": "Edytuj",
+			"cancel": "Anuluj"
+		}
+	},
+	"player": {
+		"fields": {
+			"fName": "Imię",
+			"lName": "Nazwisko",
+			"nName": "Ksywa",
+			"dateOfBirth": "Data Urodzenia",
+			"isCaptain": "Jest Kapitanem",
+			"pPlayed": "Pozycja ",
+			"phNumber": "Numer Telefonu",
+			"password": "Hasło"
+		},
+		"list": {
+			"title": "Gracze",
+			"addNew": "Dodaj nowego graczy",
+			"noData": "Brak graczy w bazie",
+			"pageTitle": "Lista graczy"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Dodawanie gracza",
+				"btnLabel": "Dodaj gracza",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie dodano gracza"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja gracza",
+				"btnLabel": "Zapisz zmiany",
+				"cancelBtnLabel": "Anuluj",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie zaktualizowano gracza"
+				}
+			},
+			"details": {
+				"pageTitle": "Szczegóły Gracza",
+				"btnLabel": "Edytuj",
+				"tableTitle": "Szczegóły Kontraktu",
+				"tableHd1": "Nazwa Organizacji",
+				"tableHd2": "Data Od",
+				"tableHd3": "Data Do",
+				"tableHd4": "Liga",
+				"tableHd5": "Pensja kontraktu",
+				"returnBtnLabel": "Powrót"
+			}
+		}
+	},
+	"organisation": {
+		"list": {
+			"title": "Organizacje",
+			"addNew": "Dodaj nową organizację",
+			"noData": "Brak organizacji w bazie",
+			"pageTitle": "Lista organizacji",
+			"actions": {
+				"title": "akcje"
+			}
+		},
+		"fields": {
+			"orgName": "Nazwa Organizacji",
+			"leagueName": "Liga",
+			"budget": "Budżet organizacji [EUR]"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Dodawanie organizacji",
+				"btnLabel": "Dodaj organizację",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie dodano organizację"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja organizacji",
+				"btnLabel": "Zapisz zmiany",
+				"cancelBtnLabel": "Anuluj",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie zaktualizowano operację"
+				}
+			},
+			"details": {
+				"pageTitle": "Szczegóły Organizacji",
+				"btnLabel": "Edytuj",
+				"returnBtnLabel": "Powrót",
+				"tableTitle": "Szczegóły Kontraktu",
+				"tableHd1": "Imię Gracza ",
+				"tableHd2": "Nazwisko Gracza",
+				"tableHd3": "Data Od",
+				"tableHd4": "Data Do",
+				"tableHd5": "Pensja kontraktu"
+			}
+		}
+	},
+	"contract": {
+		"list": {
+			"title": "Kontrakty",
+			"addNew": "Dodaj nowy Kontrakt",
+			"noData": "Brak kontraktów w bazie",
+			"pageTitle": "Lista Kontraktów"
+		},
+		"fields": {
+			"conId": "ID Kontraktu",
+			"pId": "Gracz",
+			"orgId": "Nazwa Organizacji",
+			"dateFrom": "Data Od",
+			"dateTo": "Data Do",
+			"salary": "Pensja"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Dodawanie Kontraktu",
+				"btnLabel": "Dodaj Kontrakt",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie dodano kontrakt"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edycja kontraktu",
+				"btnLabel": "Zapisz zmiany",
+				"confirm": {
+					"header": "Potwierdzenie operacji",
+					"text": "Pomyślnie zaktualizowano kontrakt"
+				}
+			},
+			"details": {
+				"pageTitle": "Szczegóły Kontraktu",
+				"btnLabel": "Edytuj"
+			}
+		}
+	},
+	"validationMessage": {
+		"fieldRequired": "Pole Jest Wymagane",
+		"field260Char": "Pole wymaga między 2-60 znaków.",
+		"fieldDateIsAfter": "Data nie może być z przyszłości.",
+		"fieldSuitablePhNumber": "Podany Numer Telefonu nie jest poprawny.",
+		"fieldNumber": "Proszę podać liczbę.",
+		"fieldNumberRange20_10mln": "Liczba musi być w przedziale od 20k do 10mln.",
+		"fieldDateFormat": "Proszę podać poprawną datę.",
+		"fieldDateFromAfterDateTo": "Data Od nie może być dalej niż Data Do.",
+		"errorSummary": "Formularz ma błędy.",
+		"noActions": "Nie można korzystać z akcji bez zalogowania."
+	},
+	"serverSideMessage": {
+		"fieldRequired": "Pole Jest Wymagane",
+		"fieldStringMax": "Pole ma za dużo znaków.",
+		"fieldStringMin": "Pole ma za mało znaków.",
+		"fieldPhNumber": "Pole musi posiadać poprawny numer telefonu.",
+		"fieldDateMax": "Pole nie może mieć daty z przyszłości.",
+		"fieldDateMin": "Data Do nie może być wcześniej niż Data Od"
+	},
+	"placeholder": {
+		"2_60char": "2-60 znaków",
+		"date": "RRRR-MM-DD",
+		"yesNo": "Tak/Nie",
+		"pPlayed": "np. Support",
+		"phNumber": "np. +48123456789",
+		"number": "1-12 liczb",
+		"digits": "1-20 cyfr"
+	},
+	"selectForm": {
+		"default": "Wybierz Opcję",
+		"optionYes": "Tak",
+		"optionNo": "Nie",
+		"optionIsCaptain": "Czy ta osoba jest kapitanem?",
+		"optionPlayer": "Wybierz Gracza",
+		"optionOrganisation": "Wybierz organizację",
+		"optionPositionPlayed": "Wybierz Pozycję gracza",
+		"optionTop": "Góra",
+		"optionJungle": "Dżungla",
+		"optionMid": "Środek",
+		"optionBot": "Dół",
+		"optionSupport": "Wsparcie"
+	},
+	"homepage": {
+		"title": "Strona Główna",
+		"body": "Rebel Games Europe Esports jest organizacją skupioną na zarządzaniu organizacjami esportowymi, graczami oraz kontraktami między nimi. Rebel Games Europe Esports działa w imieniu firmy Rebel Games"
+	},
+	"\"pId\" must be a number": "Pole jest wymagane.",
+	"Field is required": "Pole jest wymagane.",
+	"\"dateOfBirth\" must be a valid date": "Pole jest wymagane.",
+	"\"isCaptain\" must be a number": "Pole jest wymagane.",
+	"The field should contain at least 2 characters": "Pole musi zawierać przynajmniej 2 znaki.",
+	"Date cannot be from the future.": "Data nie może być w przyszłości.",
+	"\"\"phNumber\"\" did not seem to be a phone number": "Niepoprawny numer telefonu.",
+	"\"budget\" must be a number": "Pole jest wymagane",
+	"\"budget\" must be greater than or equal to 20000": "Budżet musi być pomiędzy 20k - 10mln",
+	"\"budget\" must be a safe number": "Pole musi być 'bezpieczną' liczbą",
+	"\"orgId\" must be a number": "Pole jest wymagane.",
+	"\"dateFrom\" must be a valid date": "Pole jest wymagane.",
+	"\"dateTo\" must be a valid date": "Pole jest wymagane.",
+	"\"salary\" must be a number": "Pole jest wymagane.",
+	"Date To cannot be earlier than Date From.": "Data Do nie może być wcześniej niż Data Od",
+	"\"salary\" must be greater than or equal to 20000": "Pensja musi być w zakresie 20k-10mln",
+	"Date From cannot be from the future.": "Data Od nie może być w przyszłości.",
+	"\"salary\" must be a safe number": "Pole musi być 'bezpieczną' liczbą",
+	"The field should contain at most 15 characters": "The field should contain at most 15 characters"
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset = "UTF-8">
+    <title>Rebel Games Europe Esports </title>
+    <link rel="stylesheet" href="/css/style.css">
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <script type="application/javascript" src="/js/validationCommon.js"></script>
+
+
+</head>
+
+<body>
+
+
+<header>
+<h1> Rebel Games Europe Esports</h1>
+<img src="/images/logo.png" alt="Rebel Games Europe Esports Logo">
+</header>
+<header>
+    <h7>
+        <% if(!loggedUser) { %>
+        <div id="login" class="login">
+            <h5> <%= __('login.loginTitle') %>:</h5>
+            <form method="post" action="/login" novalidate>
+                <label for="loginPhoneNumber"> <%= __('login.phNumber') %>: </label>
+                <input type="phNumber" id="loginPhoneNumber" name="phNumber">
+
+                <label for="password"> <%= __('login.password') %>: </label>
+                <input type="password" id="loginPassword" name="password">
+
+                <input type="submit" value="<%= __('login.submit.value')%>">
+                <span id="loginErrors"><%= loginError ? loginError : ''%></span>
+            </form>
+        </div>
+        <% } else { %>
+        <span>Login:  <%=loggedUser.fName + " " + loggedUser.lName%></span>
+        <a href="/logout">Sign out</a>
+        <% } %>
+    </h7>
+</header>
+<nav>
+    <ul>
+        <li> <a href="/" class=" <%= navLocation == 'main' ? 'active' : ''%>">  <%= __('nav.main-page') %></a></li>
+        <li> <a href="/players" class=" <%= navLocation == 'player' ? 'active' : ''%>"> <%= __('nav.players') %></a></li>
+        <li> <a href="/organisations" class=" <%= navLocation == 'organisation' ? 'active' : ''%>"> <%= __('nav.organisations') %></a></li>
+        <li> <a href="/contracts" class=" <%= navLocation == 'contract' ? 'active' : ''%>" > <%= __('nav.contracts') %></a></li>
+    </ul>
+    <ul>
+        <li><a href="/changeLang/pl" class="<%= lang == 'pl' ? 'active' : ''%>">PL</a></li>
+        <li><a href="/changeLang/en" class="<%= lang == 'en' ? 'active' : ''%>">EN</a></li>
+    </ul>
+</nav>
+
+
+

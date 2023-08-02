@@ -1,0 +1,7 @@
+Open Docker.
+
+Load the Database with http://localhost:8183/
+
+Serwer: mysql
+użytkownik: root
+hasło: root

@@ -1,0 +1,87 @@
+<!--
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <h2> Player Details</h2>
+    <form class = "form">
+        <label for="fName"> FirstName: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="fName" id="fName" value="Olga" disabled>
+        <span id="errorFirstName" class="errors-text"></span>
+
+        <label for="lName"> LastName:<span class= "symbol-required"> *</span></label>
+        <input type="text" name="lName" id="lName" value="Bayushi" disabled>
+        <span id="errorLastName" class="errors-text"></span>
+
+        <label for="nName"> Nickname:<span class= "symbol-required"> *</span></label>
+        <input type="text" name="nName" id="nName" value="Reiha Sama" disabled>
+        <span id="errorNickName" class="errors-text"></span>
+
+        <label for="dateOfBirth"> DateOfBirth:<span class= "symbol-required"> *</span></label>
+        <input type="date" name="dateOfBirth" id="dateOfBirth" min="1945-10-01" disabled>
+        <span id="errorDateOfBirth" class="errors-text"></span>
+
+
+
+        <label for="isCaptain"> IsCaptain:</label>
+        <select name="isCaptain" id="isCaptain" disabled>
+            <option value="true"> Yes </option>
+            <option value="false" selected> No </option>
+
+        </select>
+        <span id="errorIsCaptain" class="errors-text"></span>
+
+        <label for="pPlayed"> Position Played: <span class= "symbol-required"> *</span></label>
+        <select name="pPlayed" id="pPlayed" disabled>
+            <option value=""> What role does this person play?</option>
+            <option value="Top"> Toplane </option>
+            <option value="Jungle" > Jungle </option>
+            <option value="Mid"> Midlane </option>
+            <option value="Bot"> Botlane </option>
+            <option value="Support" selected> Support </option>
+        </select>
+        <span id="errorPositionPlayed" class="errors-text"></span>
+
+        <label for="phNumber"> PhoneNumber:<span class= "symbol-required"> *</span></label>
+        <input type="text" name="phNumber" id="phNumber" value="505 321 333" disabled>
+        <span id="errorPhoneNumber" class="errors-text"></span>
+
+        
+        <div class= "form-buttons">
+            <p id="errorsSummary"class="errors-text" ></p>
+            <a href="/players" class="form-button-cancel">Cancel</a>
+        </div>
+
+    </form>
+
+    <h2> Contract Details</h2>
+    <table class="table-list">
+        <thead>
+            <tr>
+                <th> Player Id </th>
+                <th> Organisation Id</th>
+                <th> Date From </th>
+                <th> Date To </th>
+                
+            </tr>
+        </thead>
+        <tbody class="table-list">
+            <tr>
+                <td> 111</td>
+                <td> 001</td>
+                <td> 2022-11-27 </td>
+                <td> 2023-11-27 </td>
+                
+            </tr>
+
+            <tr>
+                <td> 112</td>
+                <td> 002</td>
+                <td> 2022-10-01 </td>
+                <td> 2024-02-02</td>
+                    </tr>
+
+        </tbody>
+    </table>
+    </table>
+
+</main>
+<%- include('../../fragment/footer.ejs')%>-->

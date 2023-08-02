@@ -1,0 +1,57 @@
+<!--
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <h2> Edit Player</h2>
+    <form class = "form">
+        <label for="pId"> Player Id: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="pId" id="pId" value="111" required>
+        <span id="errorPlayerId" class="errors-text"></span>
+
+        <label for="fName"> First Name: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="fName" id="fName" value="Olga" required>
+        <span id="errorFirstName" class="errors-text"></span>
+
+        <label for="lName"> Last Name: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="lName" id="lName" value="Bayushi" required>
+        <span id="errorLastName" class="errors-text"></span>
+
+        <label for="nName"> Nickname: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="nName" id="nName" value="Reiha Sama" required>
+        <span id="errorNickName" class="errors-text"></span>
+
+        <label for="phNumber"> Phone Number: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="phNumber" id="phNumber" value="505 321 333" required>
+        <span id="errorPhoneNumber" class="errors-text"></span>
+
+        <label for="dateOfBirth"> Date Of Birth: <span class= "symbol-required"> *</span></label>
+        <input type="date" name="dateOfBirth" id="dateOfBirth" min="1945-10-01" value = "2001-12-02" required>
+        <span id="errorDateOfBirth" class="errors-text"></span>
+
+        <label for="isCaptain"> Is Captain:</label>
+        <select name="isCaptain" id="isCaptain" required>
+            <option value=""> Is this person a captain?</option>
+            <option value="1"> Yes </option>
+            <option value="" selected> No </option>
+
+        </select>
+        <span id="errorIsCaptain" class="errors-text"></span>
+
+        <label for="pPlayed"> Position Played: <span class= "symbol-required"> *</span></label>
+        <select name="pPlayed" id="pPlayed" >
+            <option value=""> What role does this person play?</option>
+            <option value="Top"> Toplane </option>
+            <option value="Jungle" > Jungle </option>
+            <option value="Mid"> Midlane </option>
+            <option value="Bot"> Botlane </option>
+            <option value="Support" selected> Support </option>
+        </select>
+
+        <div class= "form-buttons">
+            <p id="errorsSummary"class="errors-text" ></p>
+            <input type="submit" value="Add"  class="form-button-submit" />
+            <a href="/players" class="form-button-cancel">Cancel</a>
+        </div>
+
+    </form>
+</main>
+<%- include('../../fragment/footer.ejs')%>-->

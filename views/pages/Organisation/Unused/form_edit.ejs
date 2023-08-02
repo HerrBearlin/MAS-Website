@@ -1,0 +1,27 @@
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <h2> Edit Player</h2>
+    <form class = "form">
+
+
+        <label for="orgName"> Organisation Name: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="orgName" id="orgName" value="Thief" required>
+        <span id="errorOrgName" class="errors-text"></span>
+
+        <label for="leagueName"> League: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="leagueName" id="leagueName" value="LET" required>
+        <span id="errorLeagueName" class="errors-text"></span>
+
+        <label for="budget"> Budget[Euro]: <span class= "symbol-required"> *</span></label>
+        <input type="number" id="budget" name="budget" min="10000" step="5000" value="5000000" required/>
+        <span id="errorBudget" class="errors-text"></span>
+
+        <div class= "form-buttons">
+            <p id="errorsSummary"class="errors-text" ></p>
+            <input type="submit" value="Edit"  class="form-button-submit" />
+            <a href="\pages\Organisation\list.html" class="form-button-cancel">Cancel</a>
+        </div>
+
+    </form>
+</main>
+<%- include('../../fragment/footer.ejs')%>

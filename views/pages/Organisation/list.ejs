@@ -1,0 +1,44 @@
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <h2> <%= __('organisation.list.pageTitle') %></h2>
+    <table class="table-list">
+        <thead>
+            <tr>
+                <th> <%= __('organisation.fields.orgName') %> </th>
+                <th> <%= __('organisation.fields.leagueName') %> </th>
+                <th> <%= __('organisation.fields.budget') %> </th>
+                <th> <%= __('list.actions.title') %> </th>
+            </tr>
+        </thead>
+        <tbody class="table-list">
+        <% for (let organisation of organisations) {%>
+            <tr>
+                <td> <%= organisation.orgName%></td>
+                <td> <%= organisation.leagueName%></td>
+                <td> <%= organisation.budget%></td>
+                <td>
+                    <% if(loggedUser) {%>
+                    <ul class="list-actions">
+                        <li>
+                            <a href="/organisations/details/<%=organisation.orgId%>" class = "list-actions-button-details"><%= __('list.actions.details') %></a>
+                        </li>
+                        <li>
+                            <a href="/organisations/edit/<%=organisation.orgId%>" class = "list-actions-button-edit"><%= __('list.actions.edit') %></a>
+                        </li>
+                        <li>
+                            <a href="/organisations/delete/<%=organisation.orgId%>" class = "list-actions-button-delete"><%= __('list.actions.delete') %></a>
+                        </li>
+                    </ul>
+                    <% } else { %>
+                        <%= __('validationMessage.noActions')%>
+                    <% }%>
+                </td>
+            </tr>
+        <% }%>
+        </tbody>
+    </table>
+    <% if(loggedUser) {%>
+    <p><a href="/organisations/add" class="button-add"> <%= __('organisation.list.addNew') %></a></p>
+    <% }%>
+</main>
+<%- include('../../fragment/footer.ejs')%>

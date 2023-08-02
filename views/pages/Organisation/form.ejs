@@ -1,0 +1,100 @@
+<%- include('../../fragment/header.ejs')%>
+
+<!--novalidate onsubmit="return validateForm();"-->
+<main>
+    <script type="application/javascript" src="/js/validationOrganisationForm.js" ></script>
+    <h2> <%= pageTitle %></h2>
+    <form class = "form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
+
+        <input type="hidden" name="orgId" value="<%= organisation.orgId%>">
+
+        <label for="orgName"> <%= __('organisation.fields.orgName') %> <span class= "symbol-required"> *</span></label>
+        <input type="text" name="orgName" id="orgName" placeholder= "<%= __('placeholder.2_60char')%>"
+               class="<%= validationErrors.find(e => e.path.includes('orgName')) ? 'error-input' : '' %>"
+               value="<%= organisation.orgName%>"
+                <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorOrgName" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('orgName'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('orgName')).message) %>
+            <% } %>
+        </span>
+
+        <label for="leagueName"> <%= __('organisation.fields.leagueName') %> <span class= "symbol-required"> *</span></label>
+        <input type="text" name="leagueName" id="leagueName" placeholder= "<%= __('placeholder.2_60char')%>"
+               class="<%= validationErrors.find(e => e.path.includes('leagueName')) ? 'error-input' : '' %>"
+
+               value="<%= organisation.leagueName%>"
+                <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorLeagueName" class="errors-text">
+
+            <% if(validationErrors.find(e => e.path.includes('leagueName'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('leagueName')).message) %>
+            <% } %>
+        </span>
+
+        <label for="budget"> <%= __('organisation.fields.budget') %><span class= "symbol-required"> *</span></label>
+        <input type="number" id="budget" name="budget" min="10000" step="5000" placeholder= "<%= __('placeholder.digits')%>"
+               class="<%= validationErrors.find(e => e.path.includes('budget')) ? 'error-input' : '' %>"
+               value="<%= organisation.budget%>"
+                <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorBudget" class="errors-text">
+
+            <% if(validationErrors.find(e => e.path.includes('budget'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('budget')).message) %>
+            <% } %>
+        </span>
+
+
+        <% if (formMode == 'showDetails') { %>
+            <div class="form-buttons">
+                <a href="/organisations/edit/<%= organisation.orgId %>" class="list-actions-button-edit"> <%= __('form.actions.edit') %> </a>
+            </div>
+        <% } %>
+
+        <div class= "form-buttons">
+            <p id="errorsSummary"class="errors-text" ></p>
+            <% if (formMode != 'showDetails') { %>
+            <input class="form-button-submit" type="submit" value="<%=btnLabel%>"  />
+            <a class="form-button-cancel" href="/organisations"><%= __('form.actions.cancel') %> </a>
+            <% } else {%>
+                <a class="form-button-cancel" href="/organisations"><%= __('form.actions.return') %></a>
+            <% } %>
+        </div>
+
+
+    </form>
+    <% if (formMode == 'showDetails' || formMode == 'edit') {%>
+        <h2>
+            <%= __('organisation.form.details.tableTitle')%>
+        </h2>
+        <table class="table-list">
+            <thead>
+            <tr>
+                <th> <%= __('organisation.form.details.tableHd1') %></th>
+                <th> <%= __('organisation.form.details.tableHd2') %> </th>
+                <th> <%= __('organisation.form.details.tableHd3') %></th>
+                <th> <%= __('organisation.form.details.tableHd4') %></th>
+                <th> <%= __('organisation.form.details.tableHd5') %> </th>
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <% if(organisation.contracts) { %>
+                <% for (let o of organisation.contracts) { %>
+                    <tr>
+                        <td><a href="/contracts/details/<%= o.player.pId%>"> <%= o.player.fName %></a> </td>
+                        <td><%= o.player.lName %></td>
+                        <td><%= o.dateFrom.toISOString().split('T')[0]%></td>
+                        <td><%= o.dateTo.toISOString().split('T')[0]%></td>
+                        <td><%= o.salary%></td>
+                    </tr>
+                <% } %>
+            <% } %>
+            </tbody>
+        </table>
+
+
+    <% } %>
+
+</main>
+<%- include('../../fragment/footer.ejs')%>

@@ -1,0 +1,106 @@
+<%- include('../../fragment/header.ejs')%>
+<main>
+   <!-- novalidate onsubmit="return validateForm();"-->
+    <script type="application/javascript" src="/js/validationContractForm.js"></script>
+    <h2> <%= pageTitle %></h2>
+    <form class = "form" method="post" action="<%=formAction%>" novalidate onsubmit="return validateForm();">
+
+        <input type="hidden" name="conId" value="<%= contract.conId%>">
+
+        <label for="pId"> <%= __('contract.fields.pId') %> <span class="symbol-required">*</span></label>
+        <select id="pId" name="pId"
+                class="<%= validationErrors.find(e=> e.path.includes('pId')) ? 'error-input' : '' %>"
+                required <%= (formMode == 'showDetails') ? 'disabled' : ''%> >
+            <option value="" selected> <%= __('selectForm.optionPlayer')%></option>
+            <% for (let i=0; i<allPlayers.length; i++) { let player = allPlayers[i];%>
+                <option value="<%= player.pId%>" label="<%= player.fName + ' ' + player.lName %>"
+                    <% if(contract.conId) { %>
+                        <%= ( contract.conId.toString() && player.pId.toString() == contract.pId.toString()) ? 'selected': '' %>> </option>
+                    <% } else { %>
+                        <%= (  player.pId == contract.pId) ? 'selected': '' %>> </option>
+                    <% } %>
+            <% } %>
+        </select>
+
+        <span id="errorPlayerId" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('pId'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('pId')).message) %>
+            <% } %>
+        </span>
+
+        <label for="orgId"> <%= __('contract.fields.orgId') %><span class="symbol-required">*</span></label>
+        <select id="orgId" name="orgId"
+                class="<%= validationErrors.find(e=> e.path.includes('orgId')) ? 'error-input' : '' %>"
+                required <%= (formMode == 'showDetails') ? 'disabled' : ''%> >
+            <option value="" selected> <%= __('selectForm.optionOrganisation')%></option>
+            <% for (let i=0; i<allOrgs.length; i++) { let organisation = allOrgs[i];%>
+            <option value="<%= organisation.orgId%>" label="<%= organisation.orgName %>"
+                <% if (contract.conId) { %>
+                    <%= ( contract.conId && organisation.orgId.toString() == contract.orgId.toString()) ? 'selected': ''%>> </option>
+                <% } else { %>
+                    <%= ( organisation.orgId == contract.orgId) ? 'selected': ''%>> </option>
+                <% } %>
+
+            <% }%>
+        </select>
+        <span id="errorOrgId" class="errors-text">
+
+            <% if(validationErrors.find(e => e.path.includes('orgId'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('orgId')).message) %>
+            <% } %>
+        </span>
+
+        <label for="dateFrom"> <%= __('contract.fields.dateFrom') %><span class="symbol-required">*</span></label>
+        <input type="date" name="dateFrom" id="dateFrom" min="1945-10-01"
+               class="<%= validationErrors.find(e => e.path.includes('dateFrom')) ? 'error-input' : '' %>"
+               value="<%= fmt.formatDate(contract.dateFrom)%>"
+                <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorDateFrom" class="errors-text">
+
+            <% if(validationErrors.find(e => e.path.includes('dateFrom'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('dateFrom')).message) %>
+            <% } %>
+        </span>
+
+        <label for="dateTo"> <%= __('contract.fields.dateTo') %><span class="symbol-required">*</span></label>
+        <input type="date" name="dateTo" id="dateTo" min="1945-10-01"
+               class="<%= validationErrors.find(e => e.path.includes('dateTo')) ? 'error-input' : '' %>"
+               value="<%= fmt.formatDate(contract.dateTo)%>"
+                <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorDateTo" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('dateTo'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('dateTo')).message) %>
+            <% } %>
+        </span>
+
+        <label for="salary"> <%= __('contract.fields.salary') %> <span class="symbol-required">*</span></label>
+        <input type="number" id="salary" name="salary" min="10000" step="5000" placeholder= "1-12 numbers "
+               class="<%= validationErrors.find(e => e.path.includes('salary')) ? 'error-input' : '' %>"
+               value="<%= contract.salary%>"
+                <%= (formMode == 'showDetails') ? 'disabled' : ''%>/>
+        <span id="errorSalary" class="errors-text">
+            <% if(validationErrors.find(e => e.path.includes('salary'))) { %>
+                <%= __(validationErrors.find(e => e.path.includes('salary')).message) %>
+            <% } %>
+        </span>
+
+        <% if (formMode == 'showDetails') { %>
+            <div class="form-buttons">
+                <a href="/contracts/edit/<%= contract.conId %>" class="list-actions-button-edit"> <%= __('contract.form.details.btnLabel') %> </a>
+            </div>
+        <% } %>
+        <div class= "form-buttons">
+            <p id="errorsSummary"class="errors-text" ></p>
+            <% if (formMode != 'showDetails') { %>
+            <input class="form-button-submit" type="submit" value="<%=btnLabel%>"/>
+            <a class="form-button-cancel" href="/contracts"><%= __('form.actions.cancel')%></a>
+            <% } else {%>
+                <a class="form-button-cancel" href="/contracts"><%= __('form.actions.return')%></a>
+            <% } %>
+        </div>
+
+
+    </form>
+
+</main>
+<%- include('../../fragment/footer.ejs')%>

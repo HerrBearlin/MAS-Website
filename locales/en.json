@@ -1,0 +1,231 @@
+{
+	"main-page": {
+		"title": "Home Page"
+	},
+	"login": {
+		"loginTitle": "Login",
+		"password": "Password",
+		"submit": {
+			"value": "Log In"
+		},
+		"phNumber": "Phone Number",
+		"loggedIn": "Logged As ",
+		"logout": "Logout"
+	},
+	"nav": {
+		"main-page": "Main",
+		"players": "Players",
+		"organisations": "Organisations",
+		"contracts": "Contracts"
+	},
+	"list": {
+		"actions": {
+			"title": "Actions",
+			"details": "Details",
+			"edit": "Edit",
+			"delete": "Delete"
+		}
+	},
+	"form": {
+		"actions": {
+			"return": "Back",
+			"edit": "Edit",
+			"cancel": "Cancel"
+		}
+	},
+	"player": {
+		"fields": {
+			"fName": "First Name",
+			"lName": "Last Name",
+			"nName": "Nickname",
+			"dateOfBirth": "Date of Birth",
+			"isCaptain": "Is a captain",
+			"pPlayed": "Position Played ",
+			"phNumber": "Phone Number",
+			"password": "Password"
+		},
+		"list": {
+			"title": "Players",
+			"addNew": "Add new Player",
+			"noData": "No Players in Database",
+			"pageTitle": "Player List"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Adding a Player",
+				"btnLabel": "Add a Player",
+				"confirm": {
+					"header": "operation confirmed",
+					"text": "Player added successfully"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edit Player",
+				"btnLabel": "Save changes",
+				"confirm": {
+					"header": "operation confirmed",
+					"text": "Player updated successfully"
+				},
+				"cancelBtnLabel": "player.form.edit.cancelBtnLabel"
+			},
+			"details": {
+				"pageTitle": "Player Details",
+				"btnLabel": "Edit",
+				"tableTitle": "Contract Details",
+				"tableHd1": "Org Name",
+				"tableHd2": "Date From",
+				"tableHd3": "Date To",
+				"tableHd4": "League",
+				"tableHd5": "Contract Salary",
+				"returnBtnLabel": "player.form.details.returnBtnLabel"
+
+			}
+		}
+	},
+	"organisation": {
+		"list": {
+			"title": "Organisations",
+			"addNew": "Add new Organisation",
+			"noData": "No organisations",
+			"pageTitle": "Organisation list"
+		},
+		"fields": {
+			"orgName": "Organisation Name",
+			"leagueName": "League Name",
+			"budget": "Organisation Budget [EUR]"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Adding Organisation",
+				"btnLabel": "Add Organisation",
+				"confirm": {
+					"header": "Operation confirmed",
+					"text": "Organisation successfully added"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edit Organisation",
+				"btnLabel": "Save Changes",
+				"confirm": {
+					"header": "Operation Confirmed",
+					"text": "Organisation update successfully"
+				}
+			},
+			"details": {
+				"pageTitle": "Organisation Details",
+				"btnLabel": "Edit",
+				"tableTitle": "Contract Details",
+				"tableHd1": "Player Name",
+				"tableHd2": "Player Last Name",
+				"tableHd3": "Date From",
+				"tableHd4": "Date To",
+				"tableHd5": "Salary"
+			}
+		}
+	},
+	"contract": {
+		"list": {
+			"title": "Coontracts",
+			"addNew": "Add new Contract",
+			"noData": "No Contracts",
+			"pageTitle": "Contract List"
+		},
+		"fields": {
+			"conId": "Contract ID",
+			"pId": "Player ",
+			"orgId": "Organisation",
+			"dateFrom": "Date From",
+			"dateTo": "Date To",
+			"salary": "Salary"
+		},
+		"form": {
+			"add": {
+				"pageTitle": "Adding Contract",
+				"btnLabel": "Add Contract",
+				"confirm": {
+					"header": "Operation Successful",
+					"text": "Contract successfully added"
+				}
+			},
+			"edit": {
+				"pageTitle": "Edit Contract",
+				"btnLabel": "Save Changes",
+				"confirm": {
+					"header": "Operation Successful",
+					"text": "Contract successfully updated"
+				}
+			},
+			"details": {
+				"pageTitle": "Contract Details",
+				"btnLabel": "Edit"
+			}
+		}
+	},
+	"validationMessage": {
+		"fieldRequired": "Field is required",
+		"field260Char": "Field requires 2-60 characters",
+		"fieldDateIsAfter": "Date cannot be from the future.",
+		"fieldSuitablePhNumber": "Given Phone Number is not correct",
+		"fieldNumber": "Please give a number.",
+		"fieldNumberRange20_10mln": "Number must be in range 20k - 10mln",
+		"fieldDateFormat": "Please give a valid date.",
+		"fieldDateFromAfterDateTo": "Date To cannot be earlier than Date From.",
+		"errorSummary": "Form has errors.",
+		"noActions": "No actions available without signing in."
+	},
+	"serverSideMessage": {
+		"fieldRequired": "Field is Required",
+		"fieldStringMax": "Field has too many characters.",
+		"fieldStringMin": "Field has too few characters.",
+		"fieldPhNumber": "Field must contain a valid phone number.",
+		"fieldDateMax": "Field cannot have a date from the future.",
+		"fieldDateMin": "Date To cannot be before Date From"
+	},
+	"placeholder": {
+		"2_60char": "2-60 chars",
+		"date": "YYYY-MM-DD",
+		"yesNo": "Yes/No",
+		"pPlayed": "eg. Support",
+		"phNumber": "+48123456789",
+		"number": "1-12 numbers",
+		"digits": "1-20 digits"
+	},
+	"selectForm": {
+		"default": "Choose na option",
+		"optionYes": "Yes",
+		"optionNo": "No",
+		"optionPlayer": "Choose A Player",
+		"optionIsCaptain": "Is this Player a captain?",
+		"optionPositionPlayed": "Choose Player Position",
+		"optionOrganisation": "Choose Organisation",
+		"optionTop": "Top",
+		"optionJungle": "Jungle",
+		"optionMid": "Mid",
+		"optionBot": "selectForm.optionBot",
+		"optionSupport": "Support"
+	},
+
+	"homepage" : {
+		"title": "Main Page",
+		"body": "Rebel Games Europe Esports is an organisation responsible for management of Rebel Games esports organisations, players and their contracts."
+	},
+	"\"pId\" must be a number": "Field required.",
+	"Field is required": "Field required.",
+	"\"dateOfBirth\" must be a valid date": "Field required.",
+	"\"isCaptain\" must be a number": "Field required.",
+	"The field should contain at least 2 characters": "Field must contain at least 2 characters.",
+	"Date cannot be from the future.": "Date cannot be in the future.",
+	"\"\"phNumber\"\" did not seem to be a phone number": "Invalid phone number.",
+	"\"budget\" must be a number": "Field required.",
+	"\"budget\" must be greater than or equal to 20000": "Budget must be between 20k - 10mln",
+	"\"budget\" must be a safe number": "Field must be a 'safe' number",
+	"\"orgId\" must be a number": "Field required.",
+	"\"dateFrom\" must be a valid date": "Field required.",
+	"\"dateTo\" must be a valid date": "Field required.",
+	"\"salary\" must be a number": "Field required.",
+	"Date To cannot be earlier than Date From.": "Date From cannot be later than Date To.",
+	"\"salary\" must be greater than or equal to 20000": "Salary must be in range 20k - 10mln",
+	"Date From cannot be from the future.": "Date From cannot be from the future.",
+	"\"salary\" must be a safe number": "Field must be a 'safe' number"
+
+}

@@ -1,0 +1,49 @@
+<!--
+<%- include('../../fragment/header.ejs')%>
+<main>
+    <h2> Add New Player</h2>
+    <form class = "form">
+        <label for="fName"> First Name: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="fName" id="fName" class = "error-input" required>
+        <span id="errorFirstName" class="errors-text"> Field Required</span>
+
+        <label for="lName"> Last Name: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="lName" id="lName" class = "error-input" required>
+        <span id="errorLastName" class="errors-text"> Field Required </span>
+
+        <label for="nName"> Nickname:<span class= "symbol-required"> *</span></label>
+        <input type="text" name="nName" id="nName" class = "error-input" required>
+        <span id="errorNickName" class="errors-text">Field Required </span>
+
+        <label for="phNumber"> Phone Number: <span class= "symbol-required"> *</span></label>
+        <input type="text" name="phNumber" id="phNumber" class = "error-input" required>
+        <span id="errorPhoneNumber" class="errors-text">Field Required </span>
+
+        <label for="isCaptain"> Is Captain:</label>
+        <select name="isCaptain" id="isCaptain" class = "error-input" required>
+            <option value=""> Is this person a captain?</option>
+            <option value="1"> Yes </option>
+            <option value=""> No </option>
+        </select>
+        <span id="errorIsCaptain" class="errors-text"></span>
+
+        <label for="pPlayed" class = > Position Played: <span class= "symbol-required"> *</span></label>
+        <select name="pPlayed" id="pPlayed" class = "error-input">
+            <option value=""> What role does this person play?</option>
+            <option value="Top"> Toplane </option>
+            <option value="Jungle"> Jungle </option>
+            <option value="Mid"> Midlane </option>
+            <option value="Bot"> Botlane </option>
+            <option value="Support" > Support </option>
+        </select>
+        <span id="errorPositionPlayed" class="errors-text"> FieldRequired</span>
+
+        <div class= "form-buttons">
+            <p id="errorsSummary" class="errors-text"> Errors in fields.</p>
+            <input type="submit" value="Add"  class="form-button-submit" />
+            <a href="\pages\Player\list.html" class="form-button-cancel">Cancel</a>
+        </div>
+
+    </form>
+</main>
+<%- include('../../fragment/footer.ejs')%>-->
